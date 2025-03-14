@@ -6,7 +6,7 @@ class Sbcl < Formula
   license all_of: [:public_domain, "MIT", "Xerox", "BSD-3-Clause"]
   head "https://git.code.sf.net/p/sbcl/sbcl.git", branch: "master"
 
-  depends_on "sbcl" => :build
+  depends_on "sbcl-bootstrap" => :build
   depends_on "zstd"
 
   def install
@@ -18,11 +18,9 @@ class Sbcl < Formula
       ascii_val =~ /[\x80-\xff]/n
     end
 
-    xc_cmdline = "sbcl"
-
     args = [
       "--prefix=#{prefix}",
-      "--xc-host=#{xc_cmdline}",
+      "--xc-host=sbcl",
       "--fancy",
       "--with-sb-core-compression",
       "--with-sb-ldb",

@@ -6,6 +6,7 @@ class Sbcl < Formula
   license all_of: [:public_domain, "MIT", "Xerox", "BSD-3-Clause"]
   head "https://git.code.sf.net/p/sbcl/sbcl.git", branch: "master"
 
+  depends_on "sbcl" => :build
   depends_on "zstd"
 
   def install

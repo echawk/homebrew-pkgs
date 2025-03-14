@@ -1,5 +1,5 @@
 ```
-brew tap https://github.com/echawk/homebrew-tap
+brew tap echawk/homebrew-pkgs
 
 brew install --build-from-source sbcl-perf
 
